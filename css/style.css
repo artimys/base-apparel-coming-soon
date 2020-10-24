@@ -1,0 +1,194 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&display=swap");
+/*==========
+DEFAULTS
+=========*/
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-image: linear-gradient(135deg, white, #fff5f5);
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 16px;
+  color: #ce9797;
+}
+
+h1 {
+  font-size: 2.9rem;
+  font-weight: 300;
+  letter-spacing: 13px;
+  line-height: 3.1rem;
+}
+
+h1 span {
+  display: block;
+  color: #413a3a;
+  font-weight: 700;
+}
+
+form {
+  margin: 2.5em 0;
+  position: relative;
+}
+
+form input,
+form button {
+  padding: 18px 35px;
+  border-radius: 50px;
+}
+
+form input {
+  width: 100%;
+  padding-right: 100px;
+  border: 1px solid #ce9797;
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 1.1rem;
+}
+
+form input::-webkit-input-placeholder {
+  color: #ce9797;
+  opacity: 0.5;
+}
+
+form input:-ms-input-placeholder {
+  color: #ce9797;
+  opacity: 0.5;
+}
+
+form input::-ms-input-placeholder {
+  color: #ce9797;
+  opacity: 0.5;
+}
+
+form input::placeholder {
+  color: #ce9797;
+  opacity: 0.5;
+}
+
+form small {
+  display: none;
+  color: #f96262;
+  text-align: left;
+  padding-top: 20px;
+  padding-left: 35px;
+}
+
+form button {
+  border: 0;
+  background-image: linear-gradient(135deg, #f8bfbf, #ee8c8c);
+  cursor: pointer;
+  position: absolute;
+  width: 90px;
+  top: 0;
+  right: 0;
+}
+
+form button:hover {
+  -webkit-box-shadow: 0 14px 10px #ead2d2;
+          box-shadow: 0 14px 10px #ead2d2;
+}
+
+form.error input {
+  border: 2px solid #f96262;
+  background: url(../images/icon-error.svg) no-repeat;
+  background-position: right 100px center;
+}
+
+form.error small {
+  display: block;
+}
+
+/*==========
+LAYOUT
+=========*/
+.container {
+  width: 100%;
+  min-height: 100vh;
+}
+
+.container header,
+.container main {
+  padding-left: 3em;
+  padding-right: 3em;
+}
+
+.container header {
+  grid-area: h;
+  padding-top: 2em;
+  padding-bottom: 2em;
+}
+
+.container header img {
+  width: 110px;
+}
+
+.container figure {
+  background-color: red;
+  grid-area: p;
+  height: 350px;
+  background: url(../images/hero-mobile.jpg) no-repeat;
+  background-size: cover;
+  background-position: top center;
+}
+
+.container main {
+  grid-area: m;
+  margin-top: 4em;
+  text-align: center;
+}
+
+.container main p {
+  margin-top: 1.5em;
+  line-height: 1.8em;
+}
+
+footer {
+  display: none;
+}
+
+/*==========
+DESKTOP
+=========*/
+@media only screen and (min-width: 700px) {
+  h1 {
+    font-size: 4rem;
+    line-height: 4.5rem;
+  }
+  .container {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1.3fr 1fr;
+        grid-template-columns: 1.3fr 1fr;
+    -ms-grid-rows: 130px 1fr;
+        grid-template-rows: 130px 1fr;
+        grid-template-areas: "h p" "m p";
+    background: url(../images/bg-pattern-desktop.svg);
+    background-size: contain;
+    background-position: left center;
+  }
+  .container header,
+  .container main {
+    padding-left: 11em;
+    padding-right: 11em;
+  }
+  .container header {
+    padding-top: 5em;
+  }
+  .container header img {
+    width: 150px;
+  }
+  .container figure {
+    height: 100%;
+    background: url(../images/hero-desktop.jpg) no-repeat;
+    background-size: cover;
+    background-position: center center;
+  }
+  .container main {
+    margin-top: 10em;
+    text-align: left;
+  }
+}
+/*# sourceMappingURL=style.css.map */

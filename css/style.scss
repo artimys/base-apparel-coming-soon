@@ -1,0 +1,197 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&display=swap');
+
+// Primary colors
+$desaturated-red: hsl(0, 36%, 70%);
+$soft-red: hsl(0, 93%, 68%);
+// Neutral colors
+$dark-grayish-red: hsl(0, 6%, 24%);
+// Gradients
+$linear-one: linear-gradient(135deg, hsl(0, 0%, 100%), hsl(0, 100%, 98%));
+$linear-two: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
+
+
+
+/*==========
+DEFAULTS
+=========*/
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+    background-image: $linear-one;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 16px;
+    color: $desaturated-red;
+}
+
+h1 {
+    font-size: 2.9rem;
+    font-weight: 300;
+    letter-spacing: 13px;
+    line-height: 3.1rem;
+    span {
+        display: block;
+        color: $dark-grayish-red;
+        font-weight: 700;
+    }
+}
+
+form {
+    margin: 2.5em 0;
+    position: relative;
+    // display: flex;
+
+    input,
+    button {
+        padding: 18px 35px;
+        border-radius: 50px;
+    }
+
+    input {
+        width: 100%;
+        padding-right: 100px;
+        border: 1px solid $desaturated-red;
+        font-family: 'Josefin Sans', sans-serif;
+        font-size: 1.1rem;
+        &::placeholder {
+            color: $desaturated-red;
+            opacity: 0.5;
+        }
+    }
+
+    small {
+        display: none;
+        color: $soft-red;
+        text-align: left;
+        padding-top: 20px;
+        padding-left: 35px;
+    }
+    button {
+        border: 0;
+        background-image: $linear-two;
+        cursor: pointer;
+        position: absolute;
+        width: 90px;
+        top: 0;
+        right: 0;
+
+        &:hover {
+            box-shadow: 0 14px 10px lighten($desaturated-red, 17%);
+        }
+    }
+}
+form.error {
+    input {
+        border: 2px solid $soft-red;
+        background: url(../images/icon-error.svg) no-repeat;
+        background-position: right 100px center;
+    }
+    small {
+        display: block;
+   }
+}
+
+
+/*==========
+LAYOUT
+=========*/
+
+.container {
+    width: 100%;
+    min-height: 100vh;
+
+    header,
+    main {
+        padding-left: 3em;
+        padding-right: 3em;
+    }
+
+    header {
+        grid-area: h;
+        padding-top: 2em;
+        padding-bottom: 2em;
+        img {
+            width: 110px;
+        }
+    }
+    figure {
+        background-color: red;
+        grid-area: p;
+
+        height: 350px;
+        background: url(../images/hero-mobile.jpg) no-repeat;
+        background-size: cover;
+        background-position: top center;
+
+    }
+    main {
+        grid-area: m;
+        margin-top: 4em;
+        text-align: center;
+        p {
+            margin-top: 1.5em;
+            line-height: 1.8em;
+        }
+    }
+}
+
+footer {
+    display: none;
+}
+
+
+
+/*==========
+DESKTOP
+=========*/
+
+@media only screen and (min-width: 700px) {
+
+    h1 {
+        font-size: 4rem;
+        line-height: 4.5rem;
+    }
+
+    .container {
+        display: grid;
+
+        grid-template-columns: 1.3fr 1fr;
+        grid-template-rows: 130px 1fr;
+        grid-template-areas:
+            "h p"
+            "m p";
+
+        background: url(../images/bg-pattern-desktop.svg);
+        background-size: contain;
+        background-position: left center;
+
+        header,
+        main {
+            padding-left: 11em;
+            padding-right: 11em;
+        }
+
+        header {
+            padding-top: 5em;
+            img {
+                width: 150px;
+            }
+        }
+
+        figure {
+            height: 100%;
+            background: url(../images/hero-desktop.jpg) no-repeat;
+            background-size: cover;
+            background-position: center center;
+        }
+
+        main {
+            margin-top: 10em;
+            text-align: left;
+        }
+    }
+
+}
