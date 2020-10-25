@@ -47,6 +47,7 @@ form {
     input,
     button {
         padding: 18px 35px;
+        height: 55px;
         border-radius: 50px;
     }
 
@@ -54,8 +55,10 @@ form {
         width: 100%;
         padding-right: 100px;
         border: 1px solid $desaturated-red;
+        background-color: transparent;
         font-family: 'Josefin Sans', sans-serif;
         font-size: 1.1rem;
+
         &::placeholder {
             color: $desaturated-red;
             opacity: 0.5;
@@ -79,7 +82,9 @@ form {
         right: 0;
 
         &:hover {
-            box-shadow: 0 14px 10px lighten($desaturated-red, 17%);
+            box-shadow: 0 12px 20px lighten($desaturated-red, 10%);
+            background-image: none;
+            background-color: hsl(0, 80%, 86%);
         }
     }
 }
@@ -192,7 +197,7 @@ DESKTOP
         }
 
         main {
-            margin-top: 10em;
+            margin-top: 8em;
             text-align: left;
         }
     }

@@ -37,6 +37,7 @@ form {
 form input,
 form button {
   padding: 18px 35px;
+  height: 55px;
   border-radius: 50px;
 }
 
@@ -44,6 +45,7 @@ form input {
   width: 100%;
   padding-right: 100px;
   border: 1px solid #ce9797;
+  background-color: transparent;
   font-family: 'Josefin Sans', sans-serif;
   font-size: 1.1rem;
 }
@@ -87,8 +89,10 @@ form button {
 }
 
 form button:hover {
-  -webkit-box-shadow: 0 14px 10px #ead2d2;
-          box-shadow: 0 14px 10px #ead2d2;
+  -webkit-box-shadow: 0 12px 20px #debaba;
+          box-shadow: 0 12px 20px #debaba;
+  background-image: none;
+  background-color: #f8bfbf;
 }
 
 form.error input {
@@ -190,7 +194,7 @@ DESKTOP
     background-position: center center;
   }
   .container main {
-    margin-top: 10em;
+    margin-top: 8em;
     text-align: left;
   }
 }
